@@ -1,10 +1,13 @@
+// Import required scripts
+importScripts('sites.js', 'bpc_count_daily_users.js');
+
 'use strict';
 var ext_api = (typeof browser === 'object') ? browser : chrome;
 var url_loc = (typeof browser === 'object') ? 'firefox' : 'chrome';
 var manifestData = ext_api.runtime.getManifest();
 var ext_name = manifestData.name;
 var ext_version = manifestData.version;
-var navigator_ua = navigator.userAgent;
+var navigator_ua = self.navigator.userAgent;
 var navigator_ua_mobile = navigator_ua.toLowerCase().includes('mobile');
 var kiwi_browser = navigator_ua_mobile && (url_loc === 'chrome') && !navigator_ua.toLowerCase().includes('yabrowser');
 
